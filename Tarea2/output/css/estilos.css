@@ -1,5 +1,8 @@
-header {
-  background-color: azure;
+.same-line {
+  display: inline;
+}
+.same-line.inv {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=estilos.css.map */
