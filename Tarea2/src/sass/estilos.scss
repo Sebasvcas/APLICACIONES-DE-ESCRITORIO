@@ -15,6 +15,7 @@ header,footer{
     width: 100%;
     background-color: $primary-color;
 }
+
 .same-line{
     display:inline;
     color: #FFAC03;
@@ -38,25 +39,52 @@ main{
     margin: 0 auto; 
 }
 
+@include tablet{
+    h2{
+        font-size: small;
+    }
+    .square > div.columna-tablet-80{
+        width: 80%;
+    }
+}
+
+@include mobile { 
+
+    
+    h2{
+        font-size: small;
+    }
+   
+    .square > div.columna-mobile-50{
+        width: 50%;
+    }
+
+
+
+}
+
+
 img {
     float: left;
     margin: 5px;
     width: 30%;
     height: 30%;
+
+
   }
 
-  p {
-    text-align: justify;
-    font-size: 20px;
-    
-    }
+p {
+text-align: justify;
+font-size: 20px;
 
-    .square::after {
-   
-        content: "";
-        display: table;
-        clear: both;
-   
+}
+
+.square::after {
+
+    content: "";
+    display: table;
+    clear: both;
+
 }
 
 h2 {

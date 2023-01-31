@@ -34,6 +34,22 @@ main {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: small;
+  }
+  .square > div.columna-tablet-80 {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: small;
+  }
+  .square > div.columna-mobile-50 {
+    width: 50%;
+  }
+}
 img {
   float: left;
   margin: 5px;
