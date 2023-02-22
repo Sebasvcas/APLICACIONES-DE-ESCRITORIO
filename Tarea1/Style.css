@@ -1,0 +1,72 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+}
+
+body{
+    height:100%;
+}
+
+header,footer{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(97, 88, 88);
+}
+
+main{
+    max-width: 1024px;
+    margin: 0 auto; 
+}
+
+img {
+    float: left;
+    margin: 5px;
+    width: 30%;
+    height: 30%;
+  }
+
+p {
+text-align: justify;
+font-size: 20px;
+
+}
+
+.square::after {
+   
+        content: "";
+        display: table;
+        clear: both;
+   
+}
+
+h2 {
+    color: darkolivegreen;
+}
+
+.circular--square {
+    border-radius: 40%;
+  }
+
+
+@media only screen and (max-width: 768px){
+    main{
+        max-width: 768px;
+        margin: 0 auto; 
+    }
+}
+
+@media only screen and (max-width: 768px){
+    main{
+        max-width: 768px;
+        margin: 0 auto; 
+    }
+}
+
+@media only screen and (max-width: 650px){
+    main{
+        max-width: 650px;
+        margin: 0 auto; 
+    }
+}
+
