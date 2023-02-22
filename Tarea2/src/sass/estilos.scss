@@ -1,0 +1,122 @@
+@import "colors";
+@import "mixins";
+
+html,body{
+    @include nomargin;
+    font-family: montserrat;
+}
+
+body{
+    height:100%;
+}
+
+header,footer{
+    height: 150px;
+    width: 100%;
+    background-color: $primary-color;
+}
+
+.same-line{
+    display:inline;
+    color: #FFAC03;
+
+    &.inv{
+       @extend .same-line;
+       visibility: hidden;
+    }
+}
+
+.fleft{
+    float: left;
+
+    &.inv{
+        visibility: hidden;
+     } 
+}
+
+main{
+    max-width: 1024px;
+    margin: 0 auto; 
+}
+
+@include tablet{
+    h2{
+        font-size: medium;
+    }
+    .square > div.columna-tablet-80{
+        width: 80%;
+    }
+
+    .square > p{
+        font-size: medium;
+    }
+
+    .square > div.text > p,h1,h3,a,p{
+        font-size: medium;
+    }
+
+    header,footer{
+        height: 80%;
+    }
+
+
+}
+
+@include mobile { 
+
+    
+    h2{
+        font-size: small;
+    }
+   
+    .square > div.columna-mobile-50{
+        width: 50%;
+    }
+
+    .square > p{
+        font-size: small;
+    }
+
+    .square > div.text > p,h1,h3,a,p{
+        font-size: small;
+    }
+
+    header,footer{
+        height: 60%;
+    }
+
+
+}
+
+
+img {
+    float: left;
+    margin: 5px;
+    width: 30%;
+    height: 30%;
+
+
+  }
+
+p {
+text-align: justify;
+font-size: 20px;
+
+}
+
+.square::after {
+
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+h2 {
+    color: darkolivegreen;
+}
+
+.circular--square {
+    border-radius: 40%;
+  }
+
