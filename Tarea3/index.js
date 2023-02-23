@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./src/rutas');
 const rutas = require('./rutas'); 
+const path = require('path');
 
 const {engine} = require('express-handlebars');
 
@@ -12,7 +13,7 @@ app.set('view engine','handlebars');
 app.set('views','./src/views');
 
 const port = 3000;
-
+app.use('/output', express.static(path.join(__dirname, 'output')));
 app.use('', routes);
 rutas(app);
 

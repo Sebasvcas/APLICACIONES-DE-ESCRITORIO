@@ -16,6 +16,7 @@ function cargarHome(req, res) { //Funciona usando "http://localhost:3000/?token=
 
 module.exports = function(app) {    //Y ya podemos usar las rtas en otros archivos. ES UNA FUNCION
 
+    app.use('/output', express.static(path.join(__dirname, 'output'))); //Para cargar desde el navegador los estilos. MIDDLEWARE.
 
     app.get('/',auth, cargarHome);
     
@@ -23,4 +24,7 @@ module.exports = function(app) {    //Y ya podemos usar las rtas en otros archiv
         res.status(404).send('Pagina no encontrada');
     });
 }
+
+
+
 
