@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "sass src/sass:output/css",
     "styles:dev": "sass src/sass:output/css --watch",
+    "start":"node .",
     "dev": "nodemon ."
   },
   "author": "",

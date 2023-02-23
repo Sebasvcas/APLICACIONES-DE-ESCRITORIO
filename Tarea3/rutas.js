@@ -1,4 +1,4 @@
-const path = require('path');
+
 const express = require('express');
 const auth = require('./src/middlewares').auth;   //La llamamos asi porque cuando lo llamamos tenemos este nombre.
 
@@ -9,19 +9,19 @@ function cargarHome(req, res) { //Funciona usando "http://localhost:3000/?token=
     //res.send('api works for' + req.usuario);
     //res.sendFile(path.join(__dirname,'src', 'views', 'index.html'));  //Es lo mismo que la lInea de abajo.
     //res.sendFile(__dirname + '/views/index.html');  //Para encontrar la ruta con respecto a el archivo rutas.
-    res.render('home',{
+    res.render('info',{
         nombre: 'Sebas Vallejo'
     });
 }
 
 module.exports = function(app) {    //Y ya podemos usar las rtas en otros archivos. ES UNA FUNCION
 
-    app.use('/output', express.static(path.join(__dirname, 'output'))); //Para cargar desde el navegador los estilos. MIDDLEWARE.
+     //Para cargar desde el navegador los estilos. MIDDLEWARE.
 
     app.get('/',auth, cargarHome);
     
     app.get('*', function(req, res) {   //El comodIn va al final. //*Significa cualquier cosa. Lo que pongamos despuEs de localhost:3000/...
-        res.status(404).send('Pagina no encontrada');
+        res.render('404');
     });
 }
 
