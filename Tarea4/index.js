@@ -1,5 +1,5 @@
 const express = require('express');
-//const routes = require('./src/rutas');
+const routes = require('./src/rutas');
 const rutas = require('./rutas'); 
 const axios = require("axios");
 
@@ -15,7 +15,7 @@ app.set('views','./src/views');
 
 
 const port = 3000;
-//app.use('', routes);
+app.use('', routes);
 rutas(app);
 
 app.listen(port,function() {

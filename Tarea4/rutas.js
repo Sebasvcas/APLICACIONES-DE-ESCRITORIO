@@ -3,7 +3,7 @@ const express = require('express');
 
 function cargarHome(req, res) { 
     console.log('api works');
-    res.render('home',{
+    res.render('news',{
         nombre: 'Sebas Vallejo'
     });
 }
