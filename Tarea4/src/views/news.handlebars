@@ -1,0 +1,37 @@
+
+
+
+<form id="newsid" align="center">
+    <h2>Lista de noticias</h2>
+    <div class="center">
+        <div class="col-md-8">
+            <input type="text" id="input" class="form-control" placeholder="Inserta el tema que quieres buscar">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+    </div>
+</form>
+<script>
+    document.getElementById('newsid').addEventListener("submit",function(event){
+        event.preventDefault();
+        let input = document.getElementById('input');
+        let lookup = input.value;
+        window.location.href = `http://localhost:3000/news?query=${lookup}`
+    });
+</script>
+
+
+<ul align="center">
+    {{#each news}}
+    <div style="border: 2px solid grey;margin:5%">
+    <H3>TITULO</H3>
+        <li>{{this.titulo}} </li>
+    <H3>DESCRIPCION</H3>
+        <li>{{this.descripcion}} </li>
+    <H3>IMAGEN</H3>
+    <img src="{{this.imagen}}" alt="" style="width: 500px;">
+    <li><a href="{{this.urlpage}}" target="_blank">Da click aquí</a></li>
+    </div>
+    <br>
+    <br>
+    {{/each}}
+</ul>
