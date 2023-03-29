@@ -5,17 +5,12 @@ class tareaController {
    
     gettask(req, res) {
         const id = req.params.id;
-        modelo.findOne({id:id})
+        modelo.findById(id)
             .then(response=>{
-                if(response){
                     res.send(response);
-                }else{
-                    res.status(404).send('No hay tarea con ese id');
-                }
-    
             })
-            .catch(error=>{
-                res.status(400).send('Error');
+            .catch(error => {
+                    res.status(404).send('No hay tarea con ese id');
             })
     }
     taskList(req, res) {
@@ -31,7 +26,7 @@ class tareaController {
         
     const id= req.body.id;
     const updatesparams={};
-
+    console.log(id)
     if(req.body.titulo!="" || undefined)
     updatesparams.titulo=req.body.titulo;
     if(req.body.tescripcion!="" || undefined)
@@ -39,10 +34,10 @@ class tareaController {
     if(req.body.ttatus!="" || undefined)
     updatesparams.status=req.body.ttatus;
 
-        modelo.findOne({id: id})
+        modelo.findById(id)
         .then(response=>{
             if(response){
-                modelo.updateOne({id: id},{$set:parametrosAActualizar})
+                modelo.updateOne({id: id},{$set:updatesparams})
                 .then(response=>{
                     res.send({tarea:response});
                 })
@@ -54,6 +49,7 @@ class tareaController {
             }
 
         })
+        console.log(error)
         .catch(error=>{
             res.status(400).send('Error');
         })
