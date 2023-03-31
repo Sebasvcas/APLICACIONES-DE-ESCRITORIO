@@ -27,6 +27,7 @@ import { NavComponent } from './layouts/nav/nav.component';
     BrowserModule,
     RouterModule.forRoot([
       {path: 'inicio', component: InicioComponent},
+      {path: '', component: InicioComponent},
       {path: 'contact', component: ContactComponent},
       {path: 'cursos', component: CursosComponent},
       {path: 'educacion', component: EducacionComponent},
