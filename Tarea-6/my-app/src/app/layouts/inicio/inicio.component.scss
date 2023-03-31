@@ -1,0 +1,83 @@
+.container {
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: gray;
+  font-family: montserrat;
+}
+
+.container div {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    height: 350px; /* Altura de la imagen superpuesta */
+    width: 100%;
+    z-index: 1;
+  }
+
+.card{
+    background-color: white;
+}
+
+.container div {
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+.container img:first-child {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.bg {
+    width: 100%;
+    filter: blur(3px);
+    object-fit: cover;
+}
+.topimg{
+    background: white;
+
+}
+
+#self{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 30%;
+    height: 75%;
+    z-index: 1;
+}
+
+#info{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 45%;
+    height: 80%;
+    z-index: 1;
+}
+
+#info hr{
+    position: absolute;
+    width: 400px;
+    left: 0%;
+}
+
+#footer{
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    z-index: 1;
+    background-color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+  }

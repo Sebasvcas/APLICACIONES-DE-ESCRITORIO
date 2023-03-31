@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,17 +15,23 @@ import { NavComponent } from './layouts/nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
+    InicioComponent,
     CursosComponent,
     EducacionComponent,
     ProyectosComponent,
-    InicioComponent,
+    ContactComponent,
     FooterComponent,
     NavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      {path: 'inicio', component: InicioComponent},
+      {path: 'contact', component: ContactComponent},
+      {path: 'cursos', component: CursosComponent},
+      {path: 'educacion', component: EducacionComponent},
+      {path: 'proyectos', component: ProyectosComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
